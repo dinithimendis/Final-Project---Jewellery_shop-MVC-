@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="OrderFormAnchorPane" prefHeight="600.0" prefWidth="808.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.jewellery.controller.OrderFormController">
+   <children>
+      <AnchorPane layoutX="281.0" layoutY="84.0" prefHeight="159.0" prefWidth="482.0" style="-fx-background-color: #ffa801; -fx-background-radius: 10px;">
+         <children>
+            <TextField fx:id="orderIdTxt" layoutX="25.0" layoutY="42.0" promptText="Order Id" />
+            <TextField fx:id="dateTxt" layoutX="25.0" layoutY="87.0" promptText="Date" />
+            <TextField fx:id="customerIdTxt" layoutX="270.0" layoutY="42.0" promptText="Customer D" />
+            <TextField fx:id="TimeTxt" layoutX="270.0" layoutY="87.0" promptText="Time" />
+         </children>
+      </AnchorPane>
+      <TableView fx:id="OrdersTbl" layoutX="26.0" layoutY="257.0" opacity="0.84" prefHeight="289.0" prefWidth="757.0">
+         <columns>
+            <TableColumn fx:id="orderIdCol" prefWidth="253.3" text="Order ID" />
+            <TableColumn fx:id="customerIdCol" prefWidth="253.3" text="Customer ID" />
+            <TableColumn fx:id="DateCol" prefWidth="253.3" text="Date" />
+            <TableColumn fx:id="TimeCol" prefWidth="253.3" text="Time" />
+         </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <Label layoutX="350.0" layoutY="27.0" stylesheets="@styles/1St.css" text="Orders" textFill="#807410">
+         <font>
+            <Font name="Book Antiqua Bold" size="34.0" />
+         </font>
+      </Label>
+      <TextField fx:id="CustomerSearch" layoutX="33.0" layoutY="49.0" onAction="#save" promptText="Customer Search" />
+      <ImageView fitHeight="26.0" fitWidth="26.0" layoutX="194.0" layoutY="52.0" onMouseClicked="#searchOrders" pickOnBounds="true">
+         <image>
+            <Image url="@../assets/search.png" />
+         </image>
+      </ImageView>
+      <JFXButton layoutX="26.0" layoutY="546.0" onAction="#backOnAction" style="-fx-background-color: #ffa801;" text="Back" />
+
+   </children>
+   <stylesheets>
+      <URL value="@styles/2nd.css" />
+   </stylesheets>
+</AnchorPane>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXProgressBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="newPage" prefHeight="271.0" prefWidth="548.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.jewellery.controller.loadingEffectController">
+    <children>
+        <ImageView fitHeight="259.0" fitWidth="530.0" layoutX="7.0" layoutY="6.0" pickOnBounds="true">
+            <image>
+                <Image url="@../assets/GIF.gif" />
+            </image>
+        </ImageView>
+        <JFXProgressBar fx:id="ProgressBar" layoutX="60.0" layoutY="236.0" prefHeight="7.0" prefWidth="430.0" secondaryProgress="6.0" style="-fx-background-radius: 10;" />
+        <Label layoutX="23.0" layoutY="23.0" text="Loading...">
+            <font>
+                <Font name="System Bold" size="16.0" />
+            </font>
+        </Label>
+    </children>
+</AnchorPane>

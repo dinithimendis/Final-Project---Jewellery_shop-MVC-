@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="placeOrderAnchorPane" prefHeight="600.0" prefWidth="808.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.jewellery.controller.PlaceOrderFormController">
+    <children>
+      <ImageView fitHeight="569.0" fitWidth="772.0" layoutX="140.0" layoutY="16.0" opacity="0.61" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/30687-removebg-preview.png" />
+         </image>
+      </ImageView>
+        <AnchorPane layoutX="18.0" layoutY="12.0" prefHeight="214.0" prefWidth="780.0" style="-fx-background-color: rgba(149,165,166,0.4); -fx-background-radius: 8;">
+            <children>
+                <TextField fx:id="NameTxt" depthTest="ENABLE" layoutX="205.0" layoutY="47.0" promptText="Name">
+                    <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                    </padding>
+                </TextField>
+                <TextField fx:id="AddressTxt" depthTest="ENABLE" layoutX="396.0" layoutY="47.0" promptText="Address">
+                    <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                    </padding>
+                </TextField>
+                <TextField fx:id="CityTxt" depthTest="ENABLE" layoutX="588.0" layoutY="49.0" promptText="City">
+                    <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                    </padding>
+                </TextField>
+                <ComboBox fx:id="CustomerIDCombo" layoutX="18.0" layoutY="48.0" prefWidth="150.0" promptText="Customer Id" style="-fx-background-color: #ffffff;" />
+                <TextField fx:id="UnitPriceTxt" depthTest="ENABLE" layoutX="588.0" layoutY="99.0" promptText="Unit Price">
+                    <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                    </padding>
+                </TextField>
+                <TextField fx:id="QtyOnHandTxt" depthTest="ENABLE" layoutX="396.0" layoutY="101.0" promptText="Qty On Hand">
+                    <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                    </padding>
+                </TextField>
+                <TextField fx:id="DescriptionTxt" depthTest="ENABLE" layoutX="205.0" layoutY="101.0" promptText="Discription">
+                    <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                    </padding>
+                </TextField>
+                <TextField fx:id="QtyTxt" depthTest="ENABLE" layoutX="660.0" layoutY="156.0" prefHeight="31.0" prefWidth="92.0">
+                    <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                    </padding>
+                </TextField>
+                <TextField fx:id="DiscountTxt" depthTest="ENABLE" layoutX="482.0" layoutY="156.0" onAction="#discountShiftOnAction" prefHeight="31.0" prefWidth="92.0">
+                    <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                    </padding>
+                </TextField>
+                <Label layoutX="400.0" layoutY="159.0" text="Discount - " textFill="#070400">
+                    <font>
+                        <Font name="System Bold" size="16.0" />
+                    </font>
+                </Label>
+                <Label layoutX="602.0" layoutY="159.0" text="Qty - " textFill="#070400">
+                    <font>
+                        <Font name="System Bold" size="16.0" />
+                    </font>
+                </Label>
+                <Label layoutX="133.0" layoutY="125.0">
+                    <font>
+                        <Font name="System Bold" size="19.0" />
+                    </font>
+                </Label>
+                <ComboBox fx:id="ItemCodeCombo" layoutX="20.0" layoutY="101.0" prefWidth="150.0" promptText="Item Code" style="-fx-background-color: #ffffff;" />
+              <Label fx:id="DateLbl" layoutX="459.0" layoutY="16.0" prefHeight="25.0" prefWidth="150.0">
+                  <font>
+                      <Font name="System Bold" size="16.0" />
+                  </font>
+            </Label>
+              <Label fx:id="TimeLbl" layoutX="617.0" layoutY="14.0" prefHeight="30.0" prefWidth="150.0">
+                  <font>
+                      <Font name="System Bold" size="18.0" />
+                  </font>
+            </Label>
+                <Label layoutX="20.0" layoutY="158.0" text="Order Id -" textFill="#070400">
+                    <font>
+                        <Font name="System Bold" size="19.0" />
+                    </font>
+                </Label>
+                <Label fx:id="OrderID" layoutX="121.0" layoutY="157.0" prefHeight="30.0" prefWidth="179.0">
+                    <font>
+                        <Font name="System Bold" size="20.0" />
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+        <TableView fx:id="PlaceOrderTbl" layoutX="22.0" layoutY="285.0" opacity="0.83" prefHeight="250.0" prefWidth="772.0" style="-fx-background-color: #ffffff;" styleClass="btnBackGround">
+            <columns>
+                <TableColumn fx:id="OrderIDCol" prefWidth="128.6" text="Order ID" />
+                <TableColumn fx:id="ItemCodeCol" prefWidth="128.6" text="Item Code" />
+                <TableColumn fx:id="QtyCol" prefWidth="128.6" text="Qty" />
+                <TableColumn fx:id="UnitPriceCol" prefWidth="128.6" text="Unit Price" />
+                <TableColumn fx:id="DiscountCol" prefWidth="128.6" text="Discount" />
+                <TableColumn fx:id="TotalCol" prefWidth="128.6" text="Total" />
+            </columns>
+         <stylesheets>
+            <URL value="@styles/2nd.css" />
+            <URL value="@styles/background.css" />
+         </stylesheets>
+        </TableView>
+        <JFXButton buttonType="RAISED" layoutX="587.0" layoutY="552.0" onAction="#ClearOrderOnAction" onMouseEntered="#playMouseEnterAnimation" onMouseExited="#playMouseExitedAnimation" prefHeight="39.0" prefWidth="82.0" style="-fx-background-color: #f0932b;" text="Clear ">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+            <padding>
+                <Insets left="5.0" right="5.0" />
+            </padding>
+        </JFXButton>
+        <JFXButton buttonType="RAISED" layoutX="475.0" layoutY="239.0" onAction="#AddToCartOnAction" onMouseEntered="#playMouseEnterAnimation" onMouseExited="#playMouseExitedAnimation" prefHeight="39.0" prefWidth="145.0" style="-fx-background-color: #2ed573;" text="Add To Cart">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+            <padding>
+                <Insets left="5.0" right="5.0" />
+            </padding>
+        </JFXButton>
+        <JFXButton fx:id="RemoveBtn" buttonType="RAISED" layoutX="650.0" layoutY="239.0" onAction="#RemoveOnAction" onMouseEntered="#playMouseEnterAnimation" onMouseExited="#playMouseExitedAnimation" prefHeight="39.0" prefWidth="145.0" style="-fx-background-color: #eb4d4b;" text="Remove">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+            <padding>
+                <Insets left="5.0" right="5.0" />
+            </padding>
+        </JFXButton>
+        <Label layoutX="26.0" layoutY="237.0" text="Total - " textFill="#f80000">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Label>
+        <Label layoutX="103.0" layoutY="237.0" text="Rs.">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Label>
+        <Label fx:id="TotalLbl" layoutX="143.0" layoutY="237.0" prefHeight="30.0" prefWidth="105.0">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Label>
+        <JFXButton buttonType="RAISED" layoutX="678.0" layoutY="552.0" onAction="#confirmOnAction" onMouseEntered="#playMouseEnterAnimation" onMouseExited="#playMouseExitedAnimation" prefHeight="39.0" prefWidth="117.0" style="-fx-background-color: #ffa801;" text="Place Order">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+            <padding>
+                <Insets left="5.0" right="5.0" />
+            </padding>
+        </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="27.0" layoutY="552.0" onAction="#exitOnAction" onMouseEntered="#playMouseEnterAnimation" onMouseExited="#playMouseExitedAnimation" prefHeight="39.0" prefWidth="82.0" style="-fx-background-color: #eb4d4b;" styleClass="btnBackGround" text="Exit">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <padding>
+            <Insets left="5.0" right="5.0" />
+         </padding>
+         <stylesheets>
+            <URL value="@styles/1St.css" />
+            <URL value="@styles/background.css" />
+         </stylesheets>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="432.0" layoutY="551.0" onAction="#printBillOnAction" onMouseEntered="#playMouseEnterAnimation" onMouseExited="#playMouseExitedAnimation" prefHeight="39.0" prefWidth="145.0" style="-fx-background-color: #2ed573;" text="Print Bill">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <padding>
+            <Insets left="5.0" right="5.0" />
+         </padding>
+      </JFXButton>
+    </children>
+</AnchorPane>
